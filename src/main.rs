@@ -90,7 +90,8 @@ mod cache{
         set_size: usize,
         block_bits: u32,
         time_stamp: u32,
-        
+        verbose: bool,
+
         stat: CacheStat,
         sets: Vec<CacheSet>
     }
@@ -142,6 +143,7 @@ mod cache{
                 set_size:       para.set_size,
                 block_bits:     para.block_bits,
                 time_stamp:      0,
+                verbose:        para.verbose,
 
                 stat:           CacheStat { hits: 0, misses: 0, evictions: 0 },
                 sets:           Vec::<CacheSet>::with_capacity(1 << para.set_bits),
@@ -157,7 +159,9 @@ mod cache{
 
             let set_num: usize = ((addr >> self.block_bits) & ((1 << self.set_bits) - 1)).try_into().unwrap();
             let tag = addr >> (self.set_bits + self.block_bits);
-
+            if self.verbose {
+                println!("The next operation manipulates set {}", set_num);
+            }
 
 
             for line in &mut self.sets[set_num] {
