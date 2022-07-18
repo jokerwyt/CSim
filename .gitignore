@@ -1,1 +1,4 @@
 /target
+fast-evaluation/trans.o
+fast-evaluation/tracegen
+fast-evaluation/.marker

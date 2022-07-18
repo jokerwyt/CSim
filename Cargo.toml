@@ -1,5 +1,5 @@
 [package]
-name = "cache-simulator"
+name = "csim"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,6 +8,5 @@ edition = "2021"
 [dependencies]
 clap = { version = "3.0", features = ["derive"] }
 
-[[bin]]
-name = "csim"
-path = "src/main.rs"
+[lib]
+crate-type = ["staticlib", "lib", "dylib"]
