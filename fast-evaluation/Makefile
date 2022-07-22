@@ -8,7 +8,7 @@ CFLAGS = -g -Wall -Werror -std=c99
 all: tracegen
 
 tracegen: tracegen.c trans.o cachelab.c
-	$(CC) $(CFLAGS) -O0 -o tracegen tracegen.c trans.o cachelab.c -L. -lcsim -lpthread -ldl
+	$(CC) $(CFLAGS) -O0 -o tracegen tracegen.c trans.o cachelab.c -L. -lcsim -DDEBUG
 
 trans.o: trans.c
 	$(CC) $(CFLAGS) -O0 -c trans.c 
