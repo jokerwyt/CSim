@@ -25,7 +25,6 @@ r1 = _(A[j + y][i + x]);
 ```
 3. run `make` under `fast-evalution`.
 4. run `LD_LIBRARY_PATH=. ./fast-evalution/tracegen -M 32 -N 32`. If everything goes smoothly you can see the evaluation result like `miss: 340`. Adjust the size of matrix at your will.
-
 You can also run `export LD_LIBRARY_PATH=.` in advance **every time you open a new terminal**, to replace the cmd with `./fast-evalution/tracegen -M 32 -N 32`.
 
 5. It was recommended to overwrite `trans.c` in your handout with my version, so that you can copy and compile your code in both workspaces just with one line different. See comments in my `trans.c` for more details.
