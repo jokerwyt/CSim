@@ -5,7 +5,8 @@ The usage and behaviour is nearly the same to the `csim-ref` in cachelab-handout
 
 # Fast-evaluation
 For part B, `Valgrind` makes your transpone much slower. I mixed up my Rust `csim` and some C files to circumvent it, and provide a faster evaluation for cache misses.
-Of course there will be some little error (observed within 10) from the offcial `test-trans`, because I am not really tracking all memory access.
+
+I have to mention that **there will be some little error** (observed within 10) from the official `test-trans`, because I am not really tracking all memory access.
 
 ## How to use
 
@@ -28,5 +29,4 @@ r1 = _(A[j + y][i + x]);
 5. It was recommended to overwrite `trans.c` in your handout with my version, so that you can copy and compile your code in both workspaces just with one line different. See comments in my `trans.c` for more details.
 
 
-# Need More specific support?
 In fact, with C code of your `csim`, you can do whatever you want with no effort. Try to do it yourself.
